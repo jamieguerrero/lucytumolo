@@ -64,7 +64,7 @@ export default props => {
                 <a href={data.datoCmsHome.ossingtonlink}>OSSINGTON</a>
               </div>
               <div className="location-block">
-                <a href={data.datoCmsHome.dundasLink}>DUNDAS & DUFFERIN</a>
+                <a href={data.datoCmsHome.dundasLink}>DUFFERIN</a>
               </div>
             </div>
           </div>
@@ -73,13 +73,13 @@ export default props => {
             <div className="grid-inner-wrapper">
 
               <section className="align-items padding-top-medium padding-bottom-medium">
-                <div className="text-on-image grid-col-5">
+                <div className="text-on-image image-left">
                   <div className="text-on-image-text">{data.datoCmsHome.servicesTitle}</div>
                   <img className="text-on-image-image" src={data.datoCmsHome.servicesImage.url} alt={data.datoCmsHome.servicesTitle}/>
                 </div>
 
                 <div
-                  className="grid-col-4 gutter-left-1"
+                  className="text-right"
                   dangerouslySetInnerHTML={{
                     __html: data.datoCmsHome.servicesDescriptionNode.childMarkdownRemark.html,
                   }}
@@ -114,12 +114,12 @@ export default props => {
             <div className="grid-inner-wrapper">
 
               <section className="align-items padding-top-medium padding-bottom-medium">
-                <div className="text-on-image grid-col-5">
+                <div className="text-on-image image-left">
                   <div className="text-on-image-text">{data.datoCmsHome.ratesTitle}</div>
                   <img className="text-on-image-image" src={data.datoCmsHome.ratesImage.url} alt={data.datoCmsHome.ratesImage.url}/>
                 </div>
 
-                <div className="grid-col-4">
+                <div className="text-right">
                   <table className="rates-table">
                     {data.datoCmsHome.rates.map((rate) => {
                       return (

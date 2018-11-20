@@ -7,7 +7,7 @@
 .align-items
   align-items: center
 
-.grid-col-5
+.image-left
   grid-column: 1/6
   .text-on-image-text
     font-size: 2.5rem
@@ -16,16 +16,17 @@
     object-fit: cover
     width: 100%
 
-.grid-col-4
+.text-right
   grid-column: 7/11
   font-size: 1.5rem
 
 @media only screen and (max-width: 768px)
-  .grid-col-5
+  .image-left
     grid-column: 1/11
 
-  .grid-col-4
+  .text-right
     grid-column: 1/11
+    padding-top: 4rem
 
 .location-block
     height: 100%

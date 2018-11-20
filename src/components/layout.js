@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet"
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import { StaticQuery, graphql } from 'gatsby'
 
-import DarkHeader from './dark-header'
-import LightHeader from './light-header'
+import Header from './header'
+import HomeHeader from './home-header'
 import Footer from './footer'
 import '../styles/index.sass'
 
@@ -32,20 +32,18 @@ export default ({ children, location }) => (
     `}
     render={data => (
       <>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>{data.datoCmsSite.name}</title>
-        </Helmet>
-        <HelmetDatoCms
+        <Helmet
           title={data.datoCmsSite.name}
+        />
+        <HelmetDatoCms
           favicon={data.datoCmsSite.faviconMetaTags}
           seo={data.datoCmsHome.seoMetaTags}
         />
 
         {location === '/' ?
-          <LightHeader logoUrl={data.datoCmsSite.theme.logo.url} />
+          <HomeHeader logoUrl={data.datoCmsSite.theme.logo.url} />
           :
-          <DarkHeader logoUrl={data.datoCmsSite.theme.logo.url} />
+          <Header logoUrl={data.datoCmsSite.theme.logo.url} />
         }
 
         {children}

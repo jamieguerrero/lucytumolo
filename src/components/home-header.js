@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const LightHeader = ({ logoUrl }) => {
+const HomeHeader = ({ logoUrl }) => {
   return(
     <div className="grid-container menu light position-absolute">
       <div className="grid-inner-wrapper menu-inner-wrapper">
@@ -19,7 +19,7 @@ const LightHeader = ({ logoUrl }) => {
             <Link to="/modalities">Modalities</Link>
           </li>
           <li>
-            <Link to="/giftcertificate">Gift Certificate</Link>
+            <Link to="/giftcertificate">Gifts</Link>
           </li>
           <li>
             <Link to="/faq">FAQ</Link>
@@ -32,4 +32,4 @@ const LightHeader = ({ logoUrl }) => {
     </div>
 )}
 
-export default LightHeader
+export default HomeHeader

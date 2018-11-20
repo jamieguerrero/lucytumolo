@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const DarkHeader = ({ logoUrl }) => {
+const Header = ({ logoUrl }) => {
   return(
     <div className="grid-container menu dark">
       <div className="grid-inner-wrapper menu-inner-wrapper">
@@ -19,7 +19,7 @@ const DarkHeader = ({ logoUrl }) => {
             <Link to="/modalities">Modalities</Link>
           </li>
           <li>
-            <Link to="/giftcertificate">Gift Certificate</Link>
+            <Link to="/giftcertificate">Gifts</Link>
           </li>
           <li>
             <Link to="/faq">FAQ</Link>
@@ -32,4 +32,4 @@ const DarkHeader = ({ logoUrl }) => {
     </div>
 )}
 
-export default DarkHeader
+export default Header
