@@ -1,0 +1,42 @@
+.dark-logo, .light-logo
+  width: 350px
+  height: 100%
+
+.light-logo
+  filter: invert(1)
+
+.menu.dark .menu-inner-wrapper ul li a
+  color: black
+
+.menu.light .menu-inner-wrapper ul li a
+  color: white
+
+.menu
+  width: 100%
+  z-index: 100
+  ul
+    display: flex
+    flex-direction: row
+    align-items: center
+    li a
+      text-decoration: none
+      font-size: 1.25rem
+      padding-right: 2rem
+    li:last-child a
+      padding-right: 0
+
+.menu-inner-wrapper
+  display: flex
+  justify-content: space-between
+
+.hero-wrapper
+  height: 100vh
+
+.hero-content
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+  top: 0

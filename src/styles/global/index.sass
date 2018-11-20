@@ -1,0 +1,35 @@
+html
+  font-size: 14px
+  font-family: "Avenir Next", Helvetica
+  font-weight: 500
+  line-height: 1.5
+
+@media only screen and (max-width: 400px)
+  html
+    font-size: 12px
+
+.position-absolute
+  position: absolute
+
+.grid-container
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+.grid-inner-wrapper
+  grid-column: 2/12
+  display: grid
+  grid-template-columns: repeat(10, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+section
+  grid-column: 1/11
+  display: grid
+  grid-template-columns: repeat(10, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+p
+  padding-bottom: 2rem
