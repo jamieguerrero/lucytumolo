@@ -113,7 +113,7 @@ export default props => {
           <div className="grid-container background-white">
             <div className="grid-inner-wrapper">
 
-              <section className="padding-top-medium padding-bottom-medium">
+              <section className="align-items padding-top-medium padding-bottom-medium">
                 <div className="text-on-image grid-col-5">
                   <div className="text-on-image-text">{data.datoCmsHome.ratesTitle}</div>
                   <img className="text-on-image-image" src={data.datoCmsHome.ratesImage.url} alt={data.datoCmsHome.ratesImage.url}/>
