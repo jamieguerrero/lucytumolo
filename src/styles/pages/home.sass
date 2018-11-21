@@ -1,33 +1,3 @@
-.padding-top-medium
-  padding-top: 15rem
-
-.padding-bottom-medium
-  padding-bottom: 15rem
-
-.align-items
-  align-items: center
-
-.image-left
-  grid-column: 1/6
-  .text-on-image-text
-    font-size: 2.5rem
-  .text-on-image-image
-    max-height: 400px
-    object-fit: cover
-    width: 100%
-
-.text-right
-  grid-column: 7/11
-  font-size: 1.5rem
-
-@media only screen and (max-width: 768px)
-  .image-left
-    grid-column: 1/11
-
-  .text-right
-    grid-column: 1/11
-    padding-top: 4rem
-
 .location-block
     height: 100%
     width: 50%
@@ -48,6 +18,59 @@
 @media only screen and (max-width: 768px)
   .location-block a
     font-size: 2rem
+
+  .location-mobile
+    flex-direction: column
+
+
+.text-span
+    padding-top: 4rem
+    font-family: 'AvenirNext-Medium'
+    font-size: 1.5rem
+
+.text-span p:first-child
+    font-family: 'AvenirNext-Bold'
+
+.text-span p
+    padding: 0
+    line-height: 2.5
+
+.full-width
+  grid-column: 1/11
+
+.half-left
+  grid-column: 1/6
+
+.half-right
+  grid-column: 6/11
+
+.half-left, .half-right
+  .text-on-image-text
+    font-size: 2.5rem
+  .text-on-image-image
+    max-height: 400px
+    object-fit: cover
+    width: 100%
+
+.text-left
+  grid-column: 1/5
+
+.text-right
+  grid-column: 7/11
+
+.text-left, .text-right
+  font-size: 1.5rem
+
+@media only screen and (max-width: 768px)
+  .half-left, .half-right
+    grid-column: 1/11
+
+  .text-left, .text-right
+    grid-column: 1/11
+    padding-top: 4rem
+
+
+
 
 .rates-table
   font-family: 'AvenirNext-Italic'

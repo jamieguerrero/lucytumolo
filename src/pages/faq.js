@@ -1,11 +1,61 @@
 import React from 'react'
 import Layout from '../components/layout'
 
-// import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
-export default props => (
-  <Layout location={props.location.pathname}>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+export default props => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query faqQuery{
+          datoCmsFaqPage {
+            title
+            titleImage {
+              url
+            }
+          }
+          datoCmsFaqPair{
+            faqs {
+              question
+              answerNode {
+                childMarkdownRemark {
+                  html
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => {
+        return (
+          <Layout location={props.location.pathname}>
+            <div className="grid-container">
+              <div className="grid-inner-wrapper">
+                <section className="padding-top-small">
+                  <div className="text-on-image half-left">
+                    <div className="text-on-image-text">{data.datoCmsFaqPage.title}</div>
+                    <img className="text-on-image-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
+                  </div>
+                  <div className="text-right">
+                    {data.datoCmsFaqPair.faqs.map((item, i) => {
+                      return (
+                        <div key={item.i}>
+                          {item.question}
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: item.answerNode.childMarkdownRemark.html,
+                            }}
+                          />
+                        </div>
+                      )
+                    })}
+                  </div>
+                </section>
+              </div>
+            </div>
+          </Layout>
+        )
+      }}
+    />
+  )
+}

@@ -2,6 +2,10 @@
   width: 350px
   height: 100%
 
+@media only screen and (max-width: 600px)
+  .dark-logo, .light-logo
+    width: 100%
+
 .light-logo
   filter: invert(1)
 
@@ -23,6 +27,7 @@
       font-size: 1.25rem
       padding-right: 2rem
       white-space: nowrap
+      font-family: 'AvenirNext-Medium'
     li a:hover
       font-weight: bold
     li:last-child a
@@ -49,6 +54,12 @@
 @media only screen and (max-width: 600px)
   div.hero-content
     display: none
+
+  .grid-container.menu
+    height: 100%
+
+  .menu-inner-wrapper
+    justify-content: center
 
   .menu-inner-wrapper ul
     flex-direction: column

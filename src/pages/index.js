@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/layout'
 
 import { StaticQuery, graphql } from 'gatsby'
@@ -53,6 +52,18 @@ export default props => {
               }
             }
           }
+          datoCmsContact {
+            dufferinDescriptionNode {
+              childMarkdownRemark {
+                html
+              }
+            }
+            ossingtonDescriptionNode {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
         }
       `}
       render={data => (
@@ -71,15 +82,39 @@ export default props => {
 
           <div className="grid-container background-white">
             <div className="grid-inner-wrapper">
+              <section className="location-mobile show-mobile padding-top-medium">
+                <h1>LOCATIONS</h1>
+                <a href={data.datoCmsHome.ossingtonlink}>
+                  <div
+                    className="text-span"
+                    dangerouslySetInnerHTML={{
+                      __html: data.datoCmsContact.ossingtonDescriptionNode.childMarkdownRemark.html,
+                    }}
+                  />
+                </a>
+                <a href={data.datoCmsHome.dundasLink}>
+                  <div
+                    className="text-span"
+                    dangerouslySetInnerHTML={{
+                      __html: data.datoCmsContact.dufferinDescriptionNode.childMarkdownRemark.html,
+                    }}
+                  />
+                </a>
+              </section>
+            </div>
+          </div>
+
+          <div className="grid-container background-white">
+            <div className="grid-inner-wrapper">
 
               <section className="align-items padding-top-medium padding-bottom-medium">
-                <div className="text-on-image image-left">
+                <div className="text-on-image half-left">
                   <div className="text-on-image-text">{data.datoCmsHome.servicesTitle}</div>
                   <img className="text-on-image-image" src={data.datoCmsHome.servicesImage.url} alt={data.datoCmsHome.servicesTitle}/>
                 </div>
 
                 <div
-                  className="text-right"
+                  className="text-right accent-last-text"
                   dangerouslySetInnerHTML={{
                     __html: data.datoCmsHome.servicesDescriptionNode.childMarkdownRemark.html,
                   }}
@@ -87,9 +122,9 @@ export default props => {
               </section>
 
               <section className="modalities padding-bottom-medium">
-                {data.datoCmsHome.modalities.map((item) => {
+                {data.datoCmsHome.modalities.map((item, i) => {
                   return (
-                    <div className="modality-block">
+                    <div className="modality-block" key={i}>
                       <div className="text-on-image modality-image">
                         <div className="text-on-image-text">{item.modalityName}</div>
                         <img className="text-on-image-image" src={item.modalityImage.url} alt={item.modalityName}/>
@@ -114,21 +149,23 @@ export default props => {
             <div className="grid-inner-wrapper">
 
               <section className="align-items padding-top-medium padding-bottom-medium">
-                <div className="text-on-image image-left">
+                <div className="text-on-image half-left">
                   <div className="text-on-image-text">{data.datoCmsHome.ratesTitle}</div>
                   <img className="text-on-image-image" src={data.datoCmsHome.ratesImage.url} alt={data.datoCmsHome.ratesImage.url}/>
                 </div>
 
                 <div className="text-right">
                   <table className="rates-table">
-                    {data.datoCmsHome.rates.map((rate) => {
+                   <tbody>
+                    {data.datoCmsHome.rates.map((rate, i) => {
                       return (
-                        <tr>
+                        <tr key={i}>
                           <td><i>{rate.duration} minutes</i></td>
                           <td><i>${rate.price}</i></td>
                         </tr>
                       )
                     })}
+                    </tbody>
                   </table>
                   <div
                     className="rates-description"

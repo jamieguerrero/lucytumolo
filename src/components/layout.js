@@ -34,7 +34,7 @@ export default ({ children, location }) => (
       <>
         <Helmet
           title={data.datoCmsSite.name}
-        />
+        ></Helmet>
         <HelmetDatoCms
           favicon={data.datoCmsSite.faviconMetaTags}
           seo={data.datoCmsHome.seoMetaTags}

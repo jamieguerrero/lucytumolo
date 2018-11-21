@@ -1,23 +1,18 @@
+$modalities-image-width-desktop: 250px
+$circle-radius-desktop: $modalities-image-width-desktop/2
+
+$modalities-image-width-tablet: 200px
+$circle-radius-tablet: $modalities-image-width-tablet/2
+
 .modalities
     display: grid
     grid-template-columns: repeat(3, 1fr)
     grid-column-gap: 3em
     .text-on-image-image
-      clip-path: circle(150px at center)
-      height: 300px
-      width: 300px
+      clip-path: circle($circle-radius-desktop at center)
+      height: $modalities-image-width-desktop
+      width: $modalities-image-width-desktop
       filter: brightness(75%)
-
-
-@media only screen and (max-width: 1200px)
-  .modalities
-    grid-template-columns: repeat(1, 1fr)
-    grid-row-gap: 8rem
-
-@media only screen and (max-width: 768px)
-  .modalities
-    grid-template-columns: repeat(1, 1fr)
-
 
 .modality-block
   text-align: center
@@ -26,5 +21,29 @@
   align-items: center
   .modality-text
     padding-top: 2rem
-    width: 300px
+    width: $modalities-image-width-desktop
     font-size: 1.2rem
+
+@media only screen and (max-width: 1200px)
+  .modalities
+    .text-on-image-image
+      clip-path: circle($circle-radius-tablet at center)
+      height: $modalities-image-width-tablet
+      width: $modalities-image-width-tablet
+      filter: brightness(75%)
+  .modality-block
+    .modality-text
+      width: $modalities-image-width-tablet
+      font-size: 1.1rem
+
+@media only screen and (max-width: 768px)
+  .modalities
+    grid-template-columns: repeat(1, 1fr)
+    .text-on-image-image
+      clip-path: circle($circle-radius-desktop at center)
+      height: $modalities-image-width-desktop
+      width: $modalities-image-width-desktop
+  .modality-block
+    .modality-text
+      width: $modalities-image-width-desktop
+      font-size: 1.2rem

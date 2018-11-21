@@ -31,6 +31,55 @@ section
   grid-column-gap: 1em
   grid-row-gap: 1em
 
+h1, h2, h3, h4
+  text-transform: uppercase
+  font-family: 'AvenirNext-Bold'
+
+h1
+  font-size: 2.5rem
+h2
+  font-size: 2rem
+h3
+  font-size: 1.5rem
+h4
+  font-size: 1rem
+
+a
+    color: $color-accent
+    text-decoration: none
+    font-family: 'AvenirNext-bold'
+
 p
   padding-bottom: 2rem
   line-height: 2.5
+
+.accent-last-text p:last-child
+  color: #095B5F
+
+.padding-top-small
+  padding-top: 5rem
+
+.padding-bottom-small
+  padding-bottom: 5rem
+
+.padding-top-medium
+  padding-top: 15rem
+
+.padding-bottom-medium
+  padding-bottom: 15rem
+
+.padding-top-large
+  padding-top: 30rem
+
+.padding-bottom-large
+  padding-bottom: 30rem
+
+.align-items
+  align-items: center
+
+.show-mobile
+  display: none
+
+@media only screen and (max-width: 600px)
+  .show-mobile
+    display: flex

@@ -24,5 +24,12 @@ module.exports = {
         apiToken: process.env.DATO_API_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+      }
+  }
   ],
 }
