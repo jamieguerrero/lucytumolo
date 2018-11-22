@@ -19,36 +19,9 @@ export default props => {
               }
             }
           }
-          datoCmsContact {
-            dufferinLocationName
-            dufferinLocationLink
-            dufferinLocation {
-              latitude
-              longitude
-            }
-            ossingtonLocationName
-            ossingtonLocationLink
-            ossingtonLocation {
-              latitude
-              longitude
-            }
-            dufferinDescriptionNode {
-              childMarkdownRemark {
-                html
-              }
-            }
-            ossingtonDescriptionNode {
-              childMarkdownRemark {
-                html
-              }
-            }
-          }
         }
       `}
       render={data => {
-        const dufferinMapUrl = "https://maps.google.com/?q=" + data.datoCmsContact.ossingtonLocation.latitude.toString() + "," + data.datoCmsContact.ossingtonLocation.longitude.toString() + "&output=embed"
-        const ossingtonMapUrl = "https://maps.google.com/?q=" + data.datoCmsContact.dufferinLocation.latitude.toString() + "," + data.datoCmsContact.dufferinLocation.longitude.toString() + "&output=embed"
-        const { dufferinLocationLink, ossingtonLocationLink } = data.datoCmsContact
         return (
           <Layout location={props.location.pathname}>
             <div className="grid-container">
@@ -65,42 +38,6 @@ export default props => {
                     }}
                   />
                 </section>
-
-                <section className="padding-top-small">
-                  <h2 className="full-width">Locations</h2>
-                  <div className="half-left">
-                    <iframe
-                      title="dufferin"
-                      width="100%"
-                      height="250"
-                      scrolling="no"
-                      src={dufferinMapUrl}
-                     ></iframe>
-                     <a href={dufferinLocationLink}>
-                       <div
-                         dangerouslySetInnerHTML={{
-                           __html: data.datoCmsContact.dufferinDescriptionNode.childMarkdownRemark.html,
-                         }}
-                       />
-                     </a>
-                  </div>
-                  <div className="half-right">
-                    <iframe
-                      title="ossington"
-                      width="100%"
-                      height="250"
-                      scrolling="no"
-                      src={ossingtonMapUrl}
-                     ></iframe>
-                     <a href={ossingtonLocationLink}>
-                       <div
-                         dangerouslySetInnerHTML={{
-                           __html: data.datoCmsContact.ossingtonDescriptionNode.childMarkdownRemark.html,
-                         }}
-                       />
-                     </a>
-                  </div>
-                  </section>
                 </div>
               </div>
 

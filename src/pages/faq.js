@@ -13,9 +13,7 @@ export default props => {
             titleImage {
               url
             }
-          }
-          datoCmsFaqPair{
-            faqs {
+            faqPairs {
               question
               answerNode {
                 childMarkdownRemark {
@@ -37,7 +35,7 @@ export default props => {
                     <img className="text-on-image-image full-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
                   </div>
                   <div className="text-right">
-                    {data.datoCmsFaqPair.faqs.map((item, i) => {
+                    {data.datoCmsFaqPage.faqPairs.map((item, i) => {
                       return (
                         <div key={item.i}>
                           {item.question}

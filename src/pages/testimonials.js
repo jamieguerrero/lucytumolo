@@ -20,18 +20,13 @@ export default props => {
                 html
               }
             }
-          }
-          allDatoCmsTestimonial {
-            edges {
-              node {
-                id
-                testimonialTextNode {
-                  childMarkdownRemark {
-                    html
-                  }
-                }
-                testimonialImage {
-                  url
+            testimonials {
+              testimonialImage {
+                url
+              }
+              testimonialTextNode {
+                childMarkdownRemark {
+                  html
                 }
               }
             }
@@ -52,13 +47,13 @@ export default props => {
                     }}
                   />
                   <div className="full-width">
-                    {data.allDatoCmsTestimonial.edges.map((item, i) => {
+                    {data.datoCmsTestimonialPage.testimonials.map((item, i) => {
                       return (
                         <div key={i}>
-                          <img src={item.node.testimonialImage.url} alt="testimonial pic"/>
+                          <img src={item.testimonialImage.url} alt="testimonial pic"/>
                           <div
                             dangerouslySetInnerHTML={{
-                              __html: item.node.testimonialTextNode.childMarkdownRemark.html,
+                              __html: item.testimonialTextNode.childMarkdownRemark.html,
                             }}
                           />
                         </div>

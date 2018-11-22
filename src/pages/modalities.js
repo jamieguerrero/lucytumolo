@@ -25,7 +25,7 @@ export default props => {
           }
         }
       `}
-      render={data => {
+    render={data => {
         return (
           <Layout location={props.location.pathname}>
             <div className="grid-container">

@@ -10,6 +10,9 @@ const Header = ({ logoUrl }) => {
         </Link>
         <ul>
           <li>
+            <Link to="/locations">Locations</Link>
+          </li>
+          <li>
             <Link to="/about">About</Link>
           </li>
           <li>
@@ -23,9 +26,6 @@ const Header = ({ logoUrl }) => {
           </li>
           <li>
             <Link to="/faq">FAQ</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
