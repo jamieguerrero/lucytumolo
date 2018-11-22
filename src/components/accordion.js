@@ -5,6 +5,7 @@ import AccordionSection from './accordion-section';
 
 class Accordion extends Component {
   static propTypes = {
+    allowMultipleOpen: PropTypes.bool,
     children: PropTypes.instanceOf(Object).isRequired,
   };
 
@@ -13,21 +14,37 @@ class Accordion extends Component {
 
     const openSections = {};
 
+    this.props.children.forEach(child => {
+      if (child.props.isOpen) {
+        openSections[child.props.label] = true;
+      }
+    });
+
     this.state = { openSections };
   }
 
   onClick = label => {
     const {
+      props: { allowMultipleOpen },
       state: { openSections },
     } = this;
 
     const isOpen = !!openSections[label];
 
-    this.setState({
-      openSections: {
-        [label]: !isOpen
-      }
-    });
+    if (allowMultipleOpen) {
+      this.setState({
+        openSections: {
+          ...openSections,
+          [label]: !isOpen
+        }
+      });
+    } else {
+      this.setState({
+        openSections: {
+          [label]: !isOpen
+        }
+      });
+    }
   };
 
   render() {
@@ -38,7 +55,7 @@ class Accordion extends Component {
     } = this;
 
     return (
-      <div>
+      <div className="accordion">
         {children.map(child => (
           <AccordionSection
             isOpen={!!openSections[child.props.label]}

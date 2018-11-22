@@ -36,12 +36,11 @@ export default props => {
                     <img className="text-on-image-image full-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
                   </div>
                   <div className="half-right mobile-padding-top-tiny">
-                    <Accordion>
-                      {data.datoCmsFaqPage.faqPairs.map((item, i) => {
+                    <Accordion allowMultipleOpen>
+                      {data.datoCmsFaqPage.faqPairs.map((item, index) => {
                         return (
-                          <div label={item.question} key={i}>
+                          <div label={item.question} key={index}>
                             <div
-                              key={i}
                               dangerouslySetInnerHTML={{
                                 __html: item.answerNode.childMarkdownRemark.html,
                               }}
@@ -49,7 +48,7 @@ export default props => {
                           </div>
                         )
                       })}
-                    
+
                     </Accordion>
                   </div>
                 </section>

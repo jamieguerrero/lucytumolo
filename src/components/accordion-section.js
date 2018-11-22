@@ -20,7 +20,7 @@ class AccordionSection extends Component {
     } = this;
 
     return (
-      <div>
+      <div className="accordion-section padding-top-tiny">
         <div onClick={onClick} style={{ cursor: 'pointer' }}>
           <p className={ (isOpen) ? "accordion-label open" : "accordion-label close"}>{label}</p>
         </div>
