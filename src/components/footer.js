@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, instagram } ) => (
+const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, instagram, twitterIcon, facebookIcon, instagramIcon, logo } ) => (
   <div className="grid-container background-white padding-top-medium padding-bottom-medium">
     <div className="grid-inner-wrapper">
       <footer className="background-white">
@@ -25,14 +25,13 @@ const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, ins
           />
         </div>
         <div className="socials">
-          <a href={twitter}><i className="fab fa-twitter"></i></a>
-          <a href={facebook}><i className="fab fa-facebook"></i></a>
-          <a href={instagram}><i className="fab fa-instagram"></i></a>
+          <a href={twitter}><img src={twitterIcon}/></a>
+          <a href={facebook}><img src={facebookIcon}/></a>
+          <a href={instagram}><img src={instagramIcon}/></a>
         </div>
         <div className="logo">
-          logo
+          <img src={logo} alt="Footer Logo"/>
         </div>
-
       </footer>
     </div>
   </div>

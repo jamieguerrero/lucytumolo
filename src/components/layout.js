@@ -46,6 +46,18 @@ export default ({ children, location }) => (
           twitter
           instagram
           facebook
+          twitterIcon {
+            url
+          }
+          facebookIcon {
+            url
+          }
+          instagramIcon {
+            url
+          }
+          footerLogo {
+            url
+          }
         }
       }
     `}
@@ -75,7 +87,10 @@ export default ({ children, location }) => (
           twitter={data.datoCmsSocial.twitter}
           facebook={data.datoCmsSocial.facebook}
           instagram={data.datoCmsSocial.instagram}
-          logo={data.datoCmsSite.faviconMetaTags}
+          twitterIcon={data.datoCmsSocial.twitterIcon.url}
+          facebookIcon={data.datoCmsSocial.facebookIcon.url}
+          instagramIcon={data.datoCmsSocial.instagramIcon.url}
+          logo={data.datoCmsSocial.footerLogo.url}
         />
       </>
     )}
