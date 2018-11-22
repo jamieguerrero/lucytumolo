@@ -1,0 +1,50 @@
+.grid-container
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+.grid-inner-wrapper
+  grid-column: 2/12
+  display: grid
+  grid-template-columns: repeat(10, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+section
+  grid-column: 1/11
+  display: grid
+  grid-template-columns: repeat(10, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+.full-width
+  grid-column: 1/11
+
+.half-left
+  grid-column: 1/6
+
+.half-right
+  grid-column: 6/11
+
+.col-4-left
+  grid-column: 1/5
+
+.col-6-left
+  grid-column: 1/7
+
+.col-4-right
+  grid-column: 7/11
+
+.col-6-right
+  grid-column: 5/11
+
+
+@media only screen and (max-width: 768px)
+  .half-left,
+  .half-right,
+  .col-4-left,
+  .col-6-left,
+  .col-4-right,
+  .col-6-right
+    grid-column: 1/11

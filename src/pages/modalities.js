@@ -31,14 +31,14 @@ export default props => {
             <div className="grid-container">
               <div className="grid-inner-wrapper">
                 <section className="padding-top-small">
-                  <div className="text-on-image half-left">
+                  <div className="text-on-image col-4-left">
                     <div className="text-on-image-text">{data.datoCmsModalityPage.title}</div>
                     <img className="text-on-image-image full-image" src={data.datoCmsModalityPage.heroImage.url} alt={data.datoCmsModalityPage.title}/>
                   </div>
-                  <div className="text-right">
+                  <div className="half-right">
                     {data.datoCmsModalityPage.modalities.map((item, i) => {
                       return (
-                        <div key={item.i}>
+                        <div key={i} className="padding-top-tiny">
                           <h4>{item.modalityName}</h4>
                           <div
                             dangerouslySetInnerHTML={{

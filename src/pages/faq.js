@@ -30,16 +30,17 @@ export default props => {
             <div className="grid-container">
               <div className="grid-inner-wrapper">
                 <section className="padding-top-small">
-                  <div className="text-on-image half-left">
+                  <div className="text-on-image col-4-left">
                     <div className="text-on-image-text">{data.datoCmsFaqPage.title}</div>
                     <img className="text-on-image-image full-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
                   </div>
-                  <div className="text-right">
+                  <div className="half-right mobile-padding-top-tiny">
                     {data.datoCmsFaqPage.faqPairs.map((item, i) => {
                       return (
-                        <div key={item.i}>
-                          {item.question}
+                        <div>
+                          <p key={i}>{item.question}</p>
                           <div
+                            key={i}
                             dangerouslySetInnerHTML={{
                               __html: item.answerNode.childMarkdownRemark.html,
                             }}

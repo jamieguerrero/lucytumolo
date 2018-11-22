@@ -106,7 +106,6 @@ export default props => {
 
           <div className="grid-container background-white">
             <div className="grid-inner-wrapper">
-
               <section className="align-items padding-top-medium padding-bottom-medium">
                 <div className="text-on-image half-left">
                   <div className="text-on-image-text">{data.datoCmsHome.servicesTitle}</div>
@@ -114,7 +113,7 @@ export default props => {
                 </div>
 
                 <div
-                  className="text-right accent-last-text"
+                  className="col-4-right accent-paragraph accent-last-text"
                   dangerouslySetInnerHTML={{
                     __html: data.datoCmsHome.servicesDescriptionNode.childMarkdownRemark.html,
                   }}
@@ -154,8 +153,8 @@ export default props => {
                   <img className="text-on-image-image" src={data.datoCmsHome.ratesImage.url} alt={data.datoCmsHome.ratesImage.url}/>
                 </div>
 
-                <div className="text-right">
-                  <table className="rates-table">
+                <div className="col-4-right">
+                  <table className="table rates-table">
                    <tbody>
                     {data.datoCmsHome.rates.map((rate, i) => {
                       return (

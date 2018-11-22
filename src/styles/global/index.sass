@@ -2,34 +2,11 @@ html
   font-size: 14px
   font-family: "Avenir Next", Helvetica
   font-weight: 500
-  line-height: 1.5
+  line-height: 2
 
 @media only screen and (max-width: 768px)
   html
     font-size: 12px
-
-.position-absolute
-  position: absolute
-
-.grid-container
-  display: grid
-  grid-template-columns: repeat(12, 1fr)
-  grid-column-gap: 1em
-  grid-row-gap: 1em
-
-.grid-inner-wrapper
-  grid-column: 2/12
-  display: grid
-  grid-template-columns: repeat(10, 1fr)
-  grid-column-gap: 1em
-  grid-row-gap: 1em
-
-section
-  grid-column: 1/11
-  display: grid
-  grid-template-columns: repeat(10, 1fr)
-  grid-column-gap: 1em
-  grid-row-gap: 1em
 
 h1, h2, h3, h4
   text-transform: uppercase
@@ -44,35 +21,25 @@ h3
 h4
   font-size: 1rem
 
-a
-    color: $color-accent
-    text-decoration: none
-    font-family: 'AvenirNext-bold'
-
 p
+  font-size: 1.2rem
+
+a
+  color: $color-accent
+  text-decoration: none
+  font-family: 'AvenirNext-bold'
+
+.accent-paragraph p
+  font-size: 1.5rem
   padding-bottom: 2rem
   line-height: 2.5
 
-.accent-last-text p:last-child
+.accent-last-text > p:last-child
   color: #095B5F
+  padding-bottom: 0
 
-.padding-top-small
-  padding-top: 5rem
-
-.padding-bottom-small
-  padding-bottom: 5rem
-
-.padding-top-medium
-  padding-top: 15rem
-
-.padding-bottom-medium
-  padding-bottom: 15rem
-
-.padding-top-large
-  padding-top: 30rem
-
-.padding-bottom-large
-  padding-bottom: 30rem
+.position-absolute
+  position: absolute
 
 .align-items
   align-items: center
@@ -83,29 +50,3 @@ p
 @media only screen and (max-width: 600px)
   .show-mobile
     display: flex
-
-.full-width
-  grid-column: 1/11
-
-.half-left
-  grid-column: 1/6
-
-.half-right
-  grid-column: 6/11
-
-.text-left
-  grid-column: 1/5
-
-.text-right
-  grid-column: 7/11
-
-.text-left, .text-right
-  font-size: 1.5rem
-
-@media only screen and (max-width: 768px)
-  .half-left, .half-right
-    grid-column: 1/11
-
-  .text-left, .text-right
-    grid-column: 1/11
-    padding-top: 4rem

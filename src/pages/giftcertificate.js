@@ -28,12 +28,12 @@ export default props => {
             <div className="grid-container">
               <div className="grid-inner-wrapper">
                 <section className="padding-top-small">
-                  <div className="text-on-image half-left">
+                  <div className="text-on-image col-4-left">
                     <div className="text-on-image-text">{data.datoCmsGiftCertificate.pageTitle}</div>
                     <img className="text-on-image-image full-image" src={data.datoCmsGiftCertificate.heroImage.url} alt={data.datoCmsGiftCertificate.pageTitle}/>
                   </div>
                   <div
-                    className="text-right"
+                    className="description-text half-right mobile-padding-top-tiny"
                     dangerouslySetInnerHTML={{
                       __html: data.datoCmsGiftCertificate.descriptionNode.childMarkdownRemark.html,
                     }}
