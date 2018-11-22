@@ -5,7 +5,11 @@ import Layout from '../components/layout'
 
 export default props => (
   <Layout location={props.location.pathname}>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="grid-container background-white">
+      <div className="grid-inner-wrapper">
+        <h1>NOT FOUND</h1>
+        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      </div>
+    </div>
   </Layout>
 )

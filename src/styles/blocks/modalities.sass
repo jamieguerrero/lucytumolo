@@ -12,13 +12,14 @@ $circle-radius-tablet: $modalities-image-width-tablet/2
       clip-path: circle($circle-radius-desktop at center)
       height: $modalities-image-width-desktop
       width: $modalities-image-width-desktop
-      filter: brightness(75%)
 
 .modality-block
   text-align: center
   display: flex
   flex-direction: column
   align-items: center
+  .text-on-image.modality-image .text-on-image-text
+    font-size: 1.5rem
   .modality-text
     padding-top: 2rem
     width: $modalities-image-width-desktop

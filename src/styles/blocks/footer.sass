@@ -1,0 +1,31 @@
+i.fab
+  font-size: 6rem
+
+footer
+  display: grid
+  grid-column: 1/11
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-areas: "left center right" "socials socials socials" "logo logo logo"
+  text-align: center
+
+.locationa
+  grid-area: left
+
+.contact
+  grid-area: center
+
+.locationb
+  grid-area: right
+
+.socials
+  grid-area: socials
+
+.logo
+  grid-area: logo
+
+@media only screen and (max-width: 768px)
+  footer
+    grid-template-areas: "left left left" "right right right" "center center center" "socials socials socials" "logo logo logo"
+
+  .locationa,  .contact,  .locationb,  .socials,  .logo
+    padding-top: 4rem

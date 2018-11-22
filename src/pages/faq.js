@@ -34,7 +34,7 @@ export default props => {
                 <section className="padding-top-small">
                   <div className="text-on-image half-left">
                     <div className="text-on-image-text">{data.datoCmsFaqPage.title}</div>
-                    <img className="text-on-image-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
+                    <img className="text-on-image-image full-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
                   </div>
                   <div className="text-right">
                     {data.datoCmsFaqPair.faqs.map((item, i) => {

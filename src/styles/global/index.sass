@@ -83,3 +83,29 @@ p
 @media only screen and (max-width: 600px)
   .show-mobile
     display: flex
+
+.full-width
+  grid-column: 1/11
+
+.half-left
+  grid-column: 1/6
+
+.half-right
+  grid-column: 6/11
+
+.text-left
+  grid-column: 1/5
+
+.text-right
+  grid-column: 7/11
+
+.text-left, .text-right
+  font-size: 1.5rem
+
+@media only screen and (max-width: 768px)
+  .half-left, .half-right
+    grid-column: 1/11
+
+  .text-left, .text-right
+    grid-column: 1/11
+    padding-top: 4rem

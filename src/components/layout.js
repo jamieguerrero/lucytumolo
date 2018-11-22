@@ -28,6 +28,25 @@ export default ({ children, location }) => (
             ...GatsbyDatoCmsSeoMetaTags
           }
         }
+        datoCmsContact {
+          telephone
+          email
+          dufferinDescriptionNode {
+            childMarkdownRemark {
+              html
+            }
+          }
+          ossingtonDescriptionNode {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+        datoCmsSocial {
+          twitter
+          instagram
+          facebook
+        }
       }
     `}
     render={data => (
@@ -48,7 +67,16 @@ export default ({ children, location }) => (
 
         {children}
 
-        <Footer />
+        <Footer
+          ossington={data.datoCmsContact.ossingtonDescriptionNode.childMarkdownRemark.html}
+          telephone={data.datoCmsContact.telephone}
+          email={data.datoCmsContact.email}
+          dufferin={data.datoCmsContact.dufferinDescriptionNode.childMarkdownRemark.html}
+          twitter={data.datoCmsSocial.twitter}
+          facebook={data.datoCmsSocial.facebook}
+          instagram={data.datoCmsSocial.instagram}
+          logo={data.datoCmsSite.faviconMetaTags}
+        />
       </>
     )}
   />

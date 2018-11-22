@@ -22,13 +22,13 @@ export default props => {
           datoCmsContact {
             dufferinLocationName
             dufferinLocationLink
-            ossingtonLocation {
+            dufferinLocation {
               latitude
               longitude
             }
             ossingtonLocationName
             ossingtonLocationLink
-            dufferinLocation {
+            ossingtonLocation {
               latitude
               longitude
             }
@@ -48,7 +48,7 @@ export default props => {
       render={data => {
         const dufferinMapUrl = "https://maps.google.com/?q=" + data.datoCmsContact.ossingtonLocation.latitude.toString() + "," + data.datoCmsContact.ossingtonLocation.longitude.toString() + "&output=embed"
         const ossingtonMapUrl = "https://maps.google.com/?q=" + data.datoCmsContact.dufferinLocation.latitude.toString() + "," + data.datoCmsContact.dufferinLocation.longitude.toString() + "&output=embed"
-        const { dufferinLocationName, dufferinLocationLink, ossingtonLocationName, ossingtonLocationLink } = data.datoCmsContact
+        const { dufferinLocationLink, ossingtonLocationLink } = data.datoCmsContact
         return (
           <Layout location={props.location.pathname}>
             <div className="grid-container">
@@ -56,7 +56,7 @@ export default props => {
                 <section className="padding-top-small">
                   <div className="text-on-image half-left">
                     <div className="text-on-image-text">{data.datoCmsAbout.title}</div>
-                    <img className="text-on-image-image" src={data.datoCmsAbout.heroImage.url} alt={data.datoCmsAbout.title}/>
+                    <img className="text-on-image-image full-image" src={data.datoCmsAbout.heroImage.url} alt={data.datoCmsAbout.title}/>
                   </div>
                   <div
                     className="text-right"
