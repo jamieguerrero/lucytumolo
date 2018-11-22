@@ -25,9 +25,9 @@ const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, ins
           />
         </div>
         <div className="socials">
-          <a href={twitter}><img src={twitterIcon}/></a>
-          <a href={facebook}><img src={facebookIcon}/></a>
-          <a href={instagram}><img src={instagramIcon}/></a>
+          <a href={twitter}><img src={twitterIcon} alt="twitter icon"/></a>
+          <a href={facebook}><img src={facebookIcon} alt="facebook icon"/></a>
+          <a href={instagram}><img src={instagramIcon} alt="instagram icon"/></a>
         </div>
         <div className="logo">
           <img src={logo} alt="Footer Logo"/>
