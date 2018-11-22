@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Accordion from '../components/Accordion';
+import Accordion from '../components/accordion';
 
 import { StaticQuery, graphql } from 'gatsby'
 

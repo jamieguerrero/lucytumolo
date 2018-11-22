@@ -1,0 +1,31 @@
+.testimonial-hero
+  max-height: 600px
+  width: 100%
+  object-fit: cover
+  object-position: 50% 38%
+
+.testimonial-wrapper
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+.testimonial-image
+  clip-path: circle(50px at center)
+  height: 100px
+
+@media only screen and (min-width: 768px)
+  .testimonial-image
+    clip-path: circle(25px at center)
+    height: 50px
+
+  .testimonial
+    display: grid
+    grid-template-columns: 1fr 4fr
+
+@media only screen and (max-width: 768px)
+  .testimonial-hero
+    max-height: 450px
+
+  .testimonial-wrapper
+    grid-template-columns: repeat(1, 1fr)
