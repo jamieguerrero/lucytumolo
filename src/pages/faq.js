@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Accordion from '../components/Accordion';
 
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -35,19 +36,21 @@ export default props => {
                     <img className="text-on-image-image full-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
                   </div>
                   <div className="half-right mobile-padding-top-tiny">
-                    {data.datoCmsFaqPage.faqPairs.map((item, i) => {
-                      return (
-                        <div>
-                          <p key={i}>{item.question}</p>
-                          <div
-                            key={i}
-                            dangerouslySetInnerHTML={{
-                              __html: item.answerNode.childMarkdownRemark.html,
-                            }}
-                          />
-                        </div>
-                      )
-                    })}
+                    <Accordion>
+                      {data.datoCmsFaqPage.faqPairs.map((item, i) => {
+                        return (
+                          <div label={item.question} key={i}>
+                            <div
+                              key={i}
+                              dangerouslySetInnerHTML={{
+                                __html: item.answerNode.childMarkdownRemark.html,
+                              }}
+                            />
+                          </div>
+                        )
+                      })}
+                    
+                    </Accordion>
                   </div>
                 </section>
               </div>
