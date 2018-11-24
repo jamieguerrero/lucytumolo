@@ -120,7 +120,7 @@ export default props => {
                 />
               </section>
 
-              <section className="modalities padding-bottom-medium">
+              <section className="modalities padding-bottom-medium mobile-padding-bottom-small">
                 {data.datoCmsHome.modalities.map((item, i) => {
                   return (
                     <div className="modality-block" key={i}>
@@ -153,7 +153,7 @@ export default props => {
                   <img className="text-on-image-image" src={data.datoCmsHome.ratesImage.url} alt={data.datoCmsHome.ratesImage.url}/>
                 </div>
 
-                <div className="col-4-right">
+                <div className="col-4-right mobile-padding-top-small">
                   <table className="table rates-table">
                    <tbody>
                     {data.datoCmsHome.rates.map((rate, i) => {
