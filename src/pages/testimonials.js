@@ -39,7 +39,7 @@ export default props => {
             <img className="testimonial-hero padding-top-small" src={data.datoCmsTestimonialPage.heroImage.url} alt="Testimonial Hero"/>
             <div className="grid-container">
               <div className="grid-inner-wrapper">
-                <section className="padding-top-medium">
+                <section className="padding-top-medium mobile-padding-top-small">
                   <div className="full-width">
                     <h3>testimonials</h3>
                     <div className="testimonial-wrapper">

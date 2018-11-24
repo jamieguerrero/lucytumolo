@@ -35,7 +35,7 @@ export default props => {
                     <div className="text-on-image-text">{data.datoCmsModalityPage.title}</div>
                     <img className="text-on-image-image full-image" src={data.datoCmsModalityPage.heroImage.url} alt={data.datoCmsModalityPage.title}/>
                   </div>
-                  <div className="half-right">
+                  <div className="modalities-wrapper half-right mobile-padding-top-small">
                     {data.datoCmsModalityPage.modalities.map((item, i) => {
                       return (
                         <div key={i} className="padding-top-tiny">
