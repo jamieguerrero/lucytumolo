@@ -73,15 +73,15 @@ export default props => {
             <div className="grid-container">
               <div className="grid-inner-wrapper">
                 <section className="padding-top-small">
-                  <div className="half-left padding-bottom-medium">
-                    <a href={data.datoCmsContact.dufferinLocationLink}>
+                  <div className="location-wrapper full-width padding-bottom-medium">
+                    <a className="grid-a1" href={data.datoCmsContact.dufferinLocationLink}>
                       <div className="text-on-image">
                         <div className="text-on-image-text">{data.datoCmsContact.dufferinLocationName}</div>
                         <img className="text-on-image-image" src={data.datoCmsContact.dundasImage.url} alt={data.datoCmsContact.dufferinLocationName}/>
                       </div>
                     </a>
                     <iframe
-                      className="padding-top-tiny"
+                      className="grid-b1 padding-top-tiny"
                       title="dufferin"
                       width="100%"
                       height="250"
@@ -89,12 +89,12 @@ export default props => {
                       src={dufferinMapUrl}
                      ></iframe>
                     <div
-                      className="locationa padding-top-tiny padding-bottom-tiny"
+                      className="grid-c1 locationa padding-top-tiny padding-bottom-tiny"
                       dangerouslySetInnerHTML={{
                         __html: data.datoCmsContact.dufferinDescriptionNode.childMarkdownRemark.html,
                       }}
                     />
-                    <div className="padding-bottom-tiny">
+                    <div className="grid-d1 padding-bottom-tiny">
                       <table className="table hours-table">
                         <h4>Hours</h4>
                        <tbody>
@@ -110,14 +110,13 @@ export default props => {
                       </table>
                     </div>
                     <div
+                      className="grid-e1"
                       dangerouslySetInnerHTML={{
                         __html: data.datoCmsContact.dundasDescriptionNoteNode.childMarkdownRemark.html,
                       }}
                     />
-                  </div>
 
-                  <div className="half-right padding-bottom-medium">
-                    <a href={data.datoCmsContact.ossingtonLocationLink}>
+                    <a className="grid-a2" href={data.datoCmsContact.ossingtonLocationLink}>
                       <div className="text-on-image">
                         <div className="text-on-image-text">{data.datoCmsContact.ossingtonLocationName}</div>
                         <img className="text-on-image-image" src={data.datoCmsContact.ossingtonImage.url} alt={data.datoCmsContact.ossingtonLocationName}/>
@@ -125,7 +124,7 @@ export default props => {
                     </a>
 
                     <iframe
-                      className="padding-top-tiny"
+                      className="grid-b2 padding-top-tiny"
                       title="ossington"
                       width="100%"
                       height="250"
@@ -133,12 +132,12 @@ export default props => {
                       src={ossingtonMapUrl}
                      ></iframe>
                      <div
-                        className="locationb padding-top-tiny padding-bottom-tiny"
+                        className="grid-c2 locationb padding-top-tiny padding-bottom-tiny"
                         dangerouslySetInnerHTML={{
                          __html: data.datoCmsContact.ossingtonDescriptionNode.childMarkdownRemark.html,
                         }}
                      />
-                    <div className="padding-bottom-tiny">
+                    <div className="grid-d2 padding-bottom-tiny">
                       <table className="table hours-table">
                         <h4>hours</h4>
                        <tbody>
@@ -154,6 +153,7 @@ export default props => {
                       </table>
                     </div>
                     <div
+                      className="grid-e2"
                       dangerouslySetInnerHTML={{
                         __html: data.datoCmsContact.ossingtonDescriptionNoteNode.childMarkdownRemark.html,
                       }}

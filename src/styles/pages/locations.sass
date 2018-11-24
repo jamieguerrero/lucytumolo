@@ -1,0 +1,40 @@
+.location-wrapper
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-areas: "grid-a1 grid-a2" "grid-b1 grid-b2" "grid-c1 grid-c2" "grid-d1 grid-d2" "grid-e1 grid-e2"
+  grid-column-gap: 1em
+  grid-row-gap: 1em
+
+@media only screen and (max-width: 768px)
+  .location-wrapper
+    grid-template-columns: 1fr
+    grid-template-areas: "grid-a1" "grid-b1" "grid-c1" "grid-d1" "grid-e1"  "grid-a2" "grid-b2" "grid-c2" "grid-d2" "grid-e2"
+.grid-a1
+  grid-area: grid-a1
+
+.grid-b1
+  grid-area: grid-b1
+
+.grid-c1
+  grid-area: grid-c1
+
+.grid-d1
+  grid-area: grid-d1
+
+.grid-e1
+  grid-area: grid-e1
+
+.grid-a2
+  grid-area: grid-a2
+
+.grid-b2
+  grid-area: grid-b2
+
+.grid-c2
+  grid-area: grid-c2
+
+.grid-d2
+  grid-area: grid-d2
+
+.grid-e2
+  grid-area: grid-e2
