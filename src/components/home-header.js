@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { slide as Menu } from 'react-burger-menu'
 
-
 class HomeHeader extends React.Component {
   constructor (props) {
     super(props)
@@ -68,7 +67,7 @@ class HomeHeader extends React.Component {
             <Link to="/">
               <img className="light-logo" src={logoUrl} alt="Lucy Tumolo Logo"/>
             </Link>
-            <div className="mobile-menu-button padding-top-tiny light" onClick={() => this.toggleMenu()}>
+            <div className="mobile-menu-button padding-top-small light" onClick={() => this.toggleMenu()}>
               <h3>menu</h3>
             </div>
           </div>

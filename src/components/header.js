@@ -67,7 +67,7 @@ class Header extends React.Component {
             <Link to="/">
               <img className="dark-logo" src={logoUrl} alt="Lucy Tumolo Logo"/>
             </Link>
-            <div className="mobile-menu-button padding-top-tiny" onClick={() => this.toggleMenu()}>
+            <div className="mobile-menu-button padding-top-small" onClick={() => this.toggleMenu()}>
               <h3>menu</h3>
             </div>
           </div>
