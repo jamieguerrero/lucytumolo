@@ -63,13 +63,13 @@ export default ({ children, location }) => (
     `}
     render={data => (
       <>
-        <Helmet
-          title={data.datoCmsSite.name}
-        ></Helmet>
         <HelmetDatoCms
           favicon={data.datoCmsSite.faviconMetaTags}
           seo={data.datoCmsHome.seoMetaTags}
         />
+        <Helmet
+          title={data.datoCmsSite.name}
+        ></Helmet>
 
         {location === '/' ?
           <HomeHeader logoUrl={data.datoCmsSite.theme.logo.url} />

@@ -2,6 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
+    siteName: `Lucy Tumolo RMT`,
     title: `Lucy Tumolo RMT`,
     siteUrl: `http://www.lucyrmt.com`,
     description: `Toronto Based Registered Massage Therapy`,

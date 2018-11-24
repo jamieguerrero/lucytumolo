@@ -45,7 +45,7 @@ export default props => {
                     <div className="testimonial-wrapper">
                       {data.datoCmsTestimonialPage.testimonials.map((item, i) => {
                         return (
-                          <div className="testimonial mobile-padding-top-small" key={i}>
+                          <div className="testimonial padding-top-small mobile-padding-top-small" key={i}>
                             <img className="testimonial-image" src={item.testimonialImage.url} alt="testimonial pic"/>
                             <div
                               dangerouslySetInnerHTML={{
