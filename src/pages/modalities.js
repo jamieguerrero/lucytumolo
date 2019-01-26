@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default props => {
   return (
@@ -12,7 +13,9 @@ export default props => {
             id
             title
             heroImage {
-              url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             modalities {
               modalityName
@@ -33,7 +36,7 @@ export default props => {
                 <section className="padding-top-small">
                   <div className="text-on-image col-4-left">
                     <div className="text-on-image-text">{data.datoCmsModalityPage.title}</div>
-                    <img className="text-on-image-image full-image" src={data.datoCmsModalityPage.heroImage.url} alt={data.datoCmsModalityPage.title}/>
+                    <Img className="text-on-image-image full-image" fluid={data.datoCmsModalityPage.heroImage.fluid} alt={data.datoCmsModalityPage.title}/>
                   </div>
                   <div className="modalities-wrapper half-right mobile-padding-top-small">
                     {data.datoCmsModalityPage.modalities.map((item, i) => {

@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Accordion from '../components/accordion';
 
 import { StaticQuery, graphql } from 'gatsby'
+import Img from "gatsby-image"
 
 export default props => {
   return (
@@ -12,7 +13,9 @@ export default props => {
           datoCmsFaqPage {
             title
             titleImage {
-              url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             faqPairs {
               question
@@ -33,7 +36,7 @@ export default props => {
                 <section className="padding-top-small">
                   <div className="text-on-image col-4-left">
                     <div className="text-on-image-text">{data.datoCmsFaqPage.title}</div>
-                    <img className="text-on-image-image full-image" src={data.datoCmsFaqPage.titleImage.url} alt={data.datoCmsFaqPage.title}/>
+                    <Img className="text-on-image-image full-image" fluid={data.datoCmsFaqPage.titleImage.fluid} alt={data.datoCmsFaqPage.title}/>
                   </div>
                   <div className="half-right mobile-padding-top-tiny">
                     <Accordion allowMultipleOpen>

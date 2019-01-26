@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default props => {
   return (
@@ -11,7 +12,9 @@ export default props => {
           datoCmsContact {
             dufferinLocationName
             dundasImage {
-              url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             dufferinLocationLink
             dufferinLocation {
@@ -34,7 +37,9 @@ export default props => {
             }
             ossingtonLocationName
             ossingtonImage {
-              url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             ossingtonLocationLink
             ossingtonLocation {
@@ -77,7 +82,7 @@ export default props => {
                     <a className="grid-a1" href={data.datoCmsContact.dufferinLocationLink}>
                       <div className="text-on-image">
                         <div className="text-on-image-text">{data.datoCmsContact.dufferinLocationName}</div>
-                        <img className="text-on-image-image" src={data.datoCmsContact.dundasImage.url} alt={data.datoCmsContact.dufferinLocationName}/>
+                        <Img className="text-on-image-image" fluid={data.datoCmsContact.dundasImage.fluid} alt={data.datoCmsContact.dufferinLocationName}/>
                       </div>
                     </a>
                     <iframe
@@ -119,7 +124,7 @@ export default props => {
                     <a className="grid-a2" href={data.datoCmsContact.ossingtonLocationLink}>
                       <div className="text-on-image">
                         <div className="text-on-image-text">{data.datoCmsContact.ossingtonLocationName}</div>
-                        <img className="text-on-image-image" src={data.datoCmsContact.ossingtonImage.url} alt={data.datoCmsContact.ossingtonLocationName}/>
+                        <Img className="text-on-image-image" fluid={data.datoCmsContact.ossingtonImage.fluid} alt={data.datoCmsContact.ossingtonLocationName}/>
                       </div>
                     </a>
 
@@ -158,16 +163,6 @@ export default props => {
                         __html: data.datoCmsContact.ossingtonDescriptionNoteNode.childMarkdownRemark.html,
                       }}
                     />
-                  </div>
-
-
-                  <div className="text-on-image half-left">
-                    <div className="text-on-image-text">{data.datoCmsContact.contactTitle}</div>
-                    <img className="text-on-image-image" src={data.datoCmsContact.contactImage.url} alt={data.datoCmsContact.contactTitle}/>
-                  </div>
-                  <div className="col-4-right">
-                    <p><strong>Telephone:</strong> {data.datoCmsContact.telephone}</p>
-                    <p><strong>Email:</strong> {data.datoCmsContact.email}</p>
                   </div>
                 </section>
               </div>

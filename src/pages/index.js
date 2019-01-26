@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default props => {
   return (
@@ -11,12 +12,18 @@ export default props => {
           datoCmsHome {
             heroImage {
               url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             ossingtonlink
             dundasLink
             servicesTitle
             servicesImage {
               url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             servicesDescription
             servicesDescriptionNode {
@@ -28,6 +35,9 @@ export default props => {
             	modalityName
               modalityImage {
                 url
+                fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                  ...GatsbyDatoCmsFluid
+                }
               }
               modalityDescriptionNode {
                 childMarkdownRemark {
@@ -41,6 +51,9 @@ export default props => {
             ratesTitle
             ratesImage {
               url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             rates {
               duration
@@ -69,7 +82,7 @@ export default props => {
       render={data => (
         <Layout location={props.location.pathname}>
           <div className="hero-wrapper">
-            <img className="background-hero" src={data.datoCmsHome.heroImage.url} alt={data.datoCmsHome.heroImage.url}/>
+            <Img className="background-hero" fluid={data.datoCmsHome.heroImage.fluid} alt={data.datoCmsHome.heroImage.url}/>
             <div className="hero-content">
               <div className="location-block">
                 <a href={data.datoCmsHome.ossingtonlink}>OSSINGTON</a>
@@ -109,7 +122,7 @@ export default props => {
               <section className="align-items padding-top-medium padding-bottom-medium">
                 <div className="text-on-image half-left">
                   <div className="text-on-image-text">{data.datoCmsHome.servicesTitle}</div>
-                  <img className="text-on-image-image" src={data.datoCmsHome.servicesImage.url} alt={data.datoCmsHome.servicesTitle}/>
+                  <Img className="text-on-image-image" fluid={data.datoCmsHome.servicesImage.fluid} alt={data.datoCmsHome.servicesTitle}/>
                 </div>
 
                 <div
@@ -126,7 +139,7 @@ export default props => {
                     <div className="modality-block" key={i}>
                       <div className="text-on-image modality-image">
                         <div className="text-on-image-text">{item.modalityName}</div>
-                        <img className="text-on-image-image" src={item.modalityImage.url} alt={item.modalityName}/>
+                        <Img className="text-on-image-image" fluid={item.modalityImage.fluid} alt={item.modalityName}/>
                       </div>
                       <div
                         className="modality-text"
@@ -150,7 +163,7 @@ export default props => {
               <section className="align-items padding-top-medium">
                 <div className="text-on-image half-left">
                   <div className="text-on-image-text">{data.datoCmsHome.ratesTitle}</div>
-                  <img className="text-on-image-image" src={data.datoCmsHome.ratesImage.url} alt={data.datoCmsHome.ratesImage.url}/>
+                  <Img className="text-on-image-image" fluid={data.datoCmsHome.ratesImage.fluid} alt={data.datoCmsHome.ratesImage.url}/>
                 </div>
 
                 <div className="col-4-right mobile-padding-top-small">

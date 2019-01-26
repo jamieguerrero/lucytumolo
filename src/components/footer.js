@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, instagram, twitterIcon, facebookIcon, instagramIcon, logo } ) => (
-  <div className="grid-container background-white padding-top-medium padding-bottom-medium">
+  <div className="grid-container background-white padding-top-medium padding-bottom-small">
     <div className="grid-inner-wrapper">
       <footer className="background-white">
         <div className="locationa">

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 
 import { StaticQuery, graphql } from 'gatsby'
-
+import Img from 'gatsby-image'
 
 
 export default props => {
@@ -14,6 +14,9 @@ export default props => {
             id
             heroImage {
               url
+              fluid(maxWidth: 1440, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             topTestimonialNode {
               childMarkdownRemark {
@@ -22,7 +25,9 @@ export default props => {
             }
             testimonials {
               testimonialImage {
-                url
+                fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                  ...GatsbyDatoCmsFluid
+                }
               }
               testimonialTextNode {
                 childMarkdownRemark {
@@ -36,17 +41,16 @@ export default props => {
       render={data => {
         return (
           <Layout location={props.location.pathname}>
-            <img className="testimonial-hero padding-top-small" src={data.datoCmsTestimonialPage.heroImage.url} alt="Testimonial Hero"/>
             <div className="grid-container">
               <div className="grid-inner-wrapper">
-                <section className="padding-top-medium mobile-padding-top-small">
+                <section className="padding-top-small mobile-padding-top-small">
                   <div className="full-width">
                     <h3>testimonials</h3>
                     <div className="testimonial-wrapper">
                       {data.datoCmsTestimonialPage.testimonials.map((item, i) => {
                         return (
                           <div className="testimonial padding-top-small mobile-padding-top-small" key={i}>
-                            <img className="testimonial-image" src={item.testimonialImage.url} alt="testimonial pic"/>
+                            <Img className="testimonial-image" fluid={item.testimonialImage.fluid} alt="testimonial pic"/>
                             <div
                               dangerouslySetInnerHTML={{
                                 __html: item.testimonialTextNode.childMarkdownRemark.html,
@@ -60,6 +64,7 @@ export default props => {
                 </section>
               </div>
             </div>
+            <img className="testimonial-hero padding-top-small" src={data.datoCmsTestimonialPage.heroImage.url} alt="Testimonial Hero"/>
           </Layout>
         )
       }}

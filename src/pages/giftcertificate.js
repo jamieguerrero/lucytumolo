@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default props => {
   return (
@@ -11,7 +12,9 @@ export default props => {
           datoCmsGiftCertificate {
             pageTitle
             heroImage {
-              url
+              fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+                ...GatsbyDatoCmsFluid
+              }
             }
             descriptionNode {
               childMarkdownRemark {
@@ -30,7 +33,7 @@ export default props => {
                 <section className="padding-top-small">
                   <div className="text-on-image col-4-left">
                     <div className="text-on-image-text">{data.datoCmsGiftCertificate.pageTitle}</div>
-                    <img className="text-on-image-image full-image" src={data.datoCmsGiftCertificate.heroImage.url} alt={data.datoCmsGiftCertificate.pageTitle}/>
+                    <Img className="text-on-image-image full-image" fluid={data.datoCmsGiftCertificate.heroImage.fluid} alt={data.datoCmsGiftCertificate.pageTitle}/>
                   </div>
                   <div
                     className="description-text half-right mobile-padding-top-tiny"
