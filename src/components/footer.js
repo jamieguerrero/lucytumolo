@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, instagram, twitterIcon, facebookIcon, instagramIcon, logo } ) => (
+const Footer = ( { ossington, telephone, email, dufferin, dufferinLocationLink, dufferinHours, twitter, facebook, instagram, twitterIcon, facebookIcon, instagramIcon, logo } ) => (
   <div className="grid-container background-white padding-top-medium padding-bottom-small">
     <div className="grid-inner-wrapper">
       <footer className="background-white">
         <div className="locationa">
           <div
             dangerouslySetInnerHTML={{
-              __html: ossington,
+              __html: dufferin,
             }}
           />
         </div>
@@ -18,11 +18,30 @@ const Footer = ( { ossington, telephone, email, dufferin, twitter, facebook, ins
           <p>{email}</p>
         </div>
         <div className="locationb">
+        {(ossington.length === 0) ?
+          <>
+            <h4>hours</h4>
+            <table className="table hours-table--footer">
+             <tbody>
+              {dufferinHours.map((item, i) => {
+                return (
+                  <tr key={i}>
+                    <td><i>{item.day}</i></td>
+                    <td><i>{item.hours}</i></td>
+                  </tr>
+                )
+              })}
+              </tbody>
+            </table>
+            <a href={dufferinLocationLink}>Book an appointment today!</a>
+          </>
+          :
           <div
             dangerouslySetInnerHTML={{
-              __html: dufferin,
+              __html: ossington,
             }}
           />
+        }
         </div>
         <div className="socials">
           <a target="_blank" rel="noopener noreferrer" href={twitter}><img src={twitterIcon} alt="twitter icon"/></a>

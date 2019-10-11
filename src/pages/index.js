@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-
+import { Parallax } from 'react-parallax'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -10,14 +10,16 @@ export default props => {
       query={graphql`
         query HomeQuery {
           datoCmsHome {
+            locations {
+              locationLink
+              linkText
+            }
             heroImage {
               url
               fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
                 ...GatsbyDatoCmsFluid
               }
             }
-            ossingtonlink
-            dundasLink
             servicesTitle
             servicesImage {
               url
@@ -84,12 +86,13 @@ export default props => {
           <div className="hero-wrapper">
             <Img className="background-hero" fluid={data.datoCmsHome.heroImage.fluid} alt={data.datoCmsHome.heroImage.url}/>
             <div className="hero-content">
-              <div className="location-block">
-                <a href={data.datoCmsHome.ossingtonlink}>OSSINGTON</a>
-              </div>
-              <div className="location-block">
-                <a href={data.datoCmsHome.dundasLink}>DUFFERIN</a>
-              </div>
+              {data.datoCmsHome.locations.map((location) => {
+                return (
+                  <div className="location-block">
+                    <a href={location.locationLink}>{location.linkText}</a>
+                  </div>
+                )
+              })}
             </div>
           </div>
 
@@ -154,8 +157,12 @@ export default props => {
             </div>
           </div>
 
-          <img className="background-parallax" src={data.datoCmsHome.parallaxImage.url} alt={data.datoCmsHome.parallaxImage}/>
-          <div className="background-parallax-spacer"></div>
+          <Parallax bgImage={data.datoCmsHome.parallaxImage.url} strength={600}>
+            <div className="parallax--spacer"></div>
+            <div style={{ height: 500 }}>
+              <div style={insideStyles}>HTML inside the parallax</div>
+            </div>
+          </Parallax>
 
           <div className="grid-container background-white">
             <div className="grid-inner-wrapper">
