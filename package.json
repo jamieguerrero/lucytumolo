@@ -12,7 +12,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^2.0.4",
     "gatsby-plugin-sharp": "^2.0.18",
-    "gatsby-source-datocms": "^1.1.14",
+    "gatsby-source-datocms": "^2.1.11",
     "gatsby-source-filesystem": "^2.0.4",
     "gatsby-transformer-remark": "1.7.23",
     "gatsby-transformer-sharp": "^2.1.12",
@@ -24,6 +24,7 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-masonry-component": "^6.2.1",
+    "react-parallax": "^2.2.3",
     "react-slick": "0.15.4"
   },
   "keywords": [

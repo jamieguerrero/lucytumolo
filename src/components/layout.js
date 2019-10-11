@@ -17,24 +17,28 @@ export default ({ children, location }) => (
           faviconMetaTags {
             ...GatsbyDatoCmsFaviconMetaTags
           }
-          theme {
-            logo {
-              url
-            }
-          }
         }
         datoCmsHome {
+          logo {
+            url
+          }
           seoMetaTags {
             ...GatsbyDatoCmsSeoMetaTags
           }
+
         }
         datoCmsContact {
           telephone
           email
+          dufferinLocationLink
           dufferinDescriptionNode {
             childMarkdownRemark {
               html
             }
+          }
+          dufferinHours {
+            day
+            hours
           }
           ossingtonDescriptionNode {
             childMarkdownRemark {
@@ -72,9 +76,9 @@ export default ({ children, location }) => (
         ></Helmet>
 
         {location === '/' ?
-          <HomeHeader logoUrl={data.datoCmsSite.theme.logo.url} />
+          <HomeHeader logoUrl={data.datoCmsHome.logo.url} />
           :
-          <Header logoUrl={data.datoCmsSite.theme.logo.url} />
+          <Header logoUrl={data.datoCmsHome.logo.url} />
         }
 
         {children}
@@ -84,6 +88,8 @@ export default ({ children, location }) => (
           telephone={data.datoCmsContact.telephone}
           email={data.datoCmsContact.email}
           dufferin={data.datoCmsContact.dufferinDescriptionNode.childMarkdownRemark.html}
+          dufferinLocationLink={data.datoCmsContact.dufferinLocationLink}
+          dufferinHours={data.datoCmsContact.dufferinHours}
           twitter={data.datoCmsSocial.twitter}
           facebook={data.datoCmsSocial.facebook}
           instagram={data.datoCmsSocial.instagram}

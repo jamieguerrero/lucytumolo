@@ -36,7 +36,7 @@ class Header extends React.Component {
               onClick={() => this.closeMenu()}
               id="locations"
               className="menu-item"
-              to="/locations">Locations</Link>
+              to="/locations">Location</Link>
             <Link
               onClick={() => this.closeMenu()}
               id="about"
@@ -80,7 +80,7 @@ class Header extends React.Component {
             </Link>
             <ul className="desktop-nav">
               <li>
-                <Link to="/locations">Locations</Link>
+                <Link to="/locations">Location</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>

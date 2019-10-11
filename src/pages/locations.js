@@ -86,10 +86,10 @@ export default props => {
                       </div>
                     </a>
                     <iframe
-                      className="grid-b1 padding-top-tiny"
+                      className={(data.datoCmsContact.ossingtonLocationLink.length === 0) ? "grid-a2" : "grid-b1 padding-top-tiny"}
                       title="dufferin"
                       width="100%"
-                      height="250"
+                      height={(data.datoCmsContact.ossingtonLocationLink.length === 0) ? '100%' : 250}
                       scrolling="no"
                       src={dufferinMapUrl}
                      ></iframe>
@@ -121,49 +121,58 @@ export default props => {
                       }}
                     />
 
-                    <a className="grid-a2" href={data.datoCmsContact.ossingtonLocationLink}>
-                      <div className="text-on-image">
-                        <div className="text-on-image-text">{data.datoCmsContact.ossingtonLocationName}</div>
-                        <Img className="text-on-image-image" fluid={data.datoCmsContact.ossingtonImage.fluid} alt={data.datoCmsContact.ossingtonLocationName}/>
-                      </div>
-                    </a>
+                    {
+                      (data.datoCmsContact.ossingtonLocationLink.length !== 0) ?
+                        <>
+                          <a className="grid-a2" href={data.datoCmsContact.ossingtonLocationLink}>
+                            <div className="text-on-image">
+                              <div className="text-on-image-text">{data.datoCmsContact.ossingtonLocationName}</div>
+                              <Img className="text-on-image-image" fluid={data.datoCmsContact.ossingtonImage.fluid} alt={data.datoCmsContact.ossingtonLocationName}/>
+                            </div>
+                          </a>
 
-                    <iframe
-                      className="grid-b2 padding-top-tiny"
-                      title="ossington"
-                      width="100%"
-                      height="250"
-                      scrolling="no"
-                      src={ossingtonMapUrl}
-                     ></iframe>
-                     <div
-                        className="grid-c2 locationb padding-top-tiny padding-bottom-tiny"
-                        dangerouslySetInnerHTML={{
-                         __html: data.datoCmsContact.ossingtonDescriptionNode.childMarkdownRemark.html,
-                        }}
-                     />
-                    <div className="grid-d2 padding-bottom-tiny">
-                      <table className="table hours-table">
-                        <h4>hours</h4>
-                       <tbody>
-                        {data.datoCmsContact.ossingtonHours.map((item, i) => {
-                          return (
-                            <tr key={i}>
-                              <td>{item.day}</td>
-                              <td>{item.hours}</td>
-                            </tr>
-                          )
-                        })}
-                        </tbody>
-                      </table>
+                          <iframe
+                            className="grid-b2 padding-top-tiny"
+                            title="ossington"
+                            width="100%"
+                            height="250"
+                            scrolling="no"
+                            src={ossingtonMapUrl}
+                           ></iframe>
+                           <div
+                              className="grid-c2 locationb padding-top-tiny padding-bottom-tiny"
+                              dangerouslySetInnerHTML={{
+                               __html: data.datoCmsContact.ossingtonDescriptionNode.childMarkdownRemark.html,
+                              }}
+                           />
+                          <div className="grid-d2 padding-bottom-tiny">
+                            <table className="table hours-table">
+                              <h4>hours</h4>
+                             <tbody>
+                              {data.datoCmsContact.ossingtonHours.map((item, i) => {
+                                return (
+                                  <tr key={i}>
+                                    <td>{item.day}</td>
+                                    <td>{item.hours}</td>
+                                  </tr>
+                                )
+                              })}
+                              </tbody>
+                            </table>
+                          </div>
+                          <div
+                            className="grid-e2"
+                            dangerouslySetInnerHTML={{
+                              __html: data.datoCmsContact.ossingtonDescriptionNoteNode.childMarkdownRemark.html,
+                            }}
+                          />
+
+                      </>
+                      :
+                      null
+
+                    }
                     </div>
-                    <div
-                      className="grid-e2"
-                      dangerouslySetInnerHTML={{
-                        __html: data.datoCmsContact.ossingtonDescriptionNoteNode.childMarkdownRemark.html,
-                      }}
-                    />
-                  </div>
                 </section>
               </div>
             </div>
