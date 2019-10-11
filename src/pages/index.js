@@ -159,9 +159,6 @@ export default props => {
 
           <Parallax bgImage={data.datoCmsHome.parallaxImage.url} strength={600}>
             <div className="parallax--spacer"></div>
-            <div style={{ height: 500 }}>
-              <div style={insideStyles}>HTML inside the parallax</div>
-            </div>
           </Parallax>
 
           <div className="grid-container background-white">
