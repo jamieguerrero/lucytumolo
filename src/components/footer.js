@@ -21,7 +21,7 @@ const Footer = ( { ossington, telephone, email, dufferin, dufferinLocationLink, 
         {(ossington.length === 0) ?
           <>
             <h4>hours</h4>
-            <table className="table hours-table--footer">
+            <table className="table hours-table--footer margin-bottom-tiny">
              <tbody>
               {dufferinHours.map((item, i) => {
                 return (

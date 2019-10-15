@@ -40,6 +40,17 @@ footer
 .locationa p:first-child, .locationb p:first-child
   font-family: 'AvenirNext-Bold'
 
+table.hours-table--footer
+  tbody
+    display: flex
+    flex-direction: column
+    align-self: center
+    tr
+      display: flex
+      justify-content: center
+      td
+        width: 40%
+
 @media only screen and (max-width: 768px)
   footer
     grid-template-areas: "left left left" "right right right" "center center center" "socials socials socials" "logo logo logo"

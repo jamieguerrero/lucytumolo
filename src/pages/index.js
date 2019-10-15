@@ -5,6 +5,14 @@ import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 export default props => {
+  const insideStyles = {
+    background: "white",
+    padding: 20,
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)"
+  };
   return (
     <StaticQuery
       query={graphql`
@@ -50,6 +58,7 @@ export default props => {
             parallaxImage {
               url
             }
+            parallaxLink
             ratesTitle
             ratesImage {
               url
@@ -158,7 +167,9 @@ export default props => {
           </div>
 
           <Parallax bgImage={data.datoCmsHome.parallaxImage.url} strength={600}>
-            <div className="parallax--spacer"></div>
+            <div className="parallax--spacer">
+              <div style={insideStyles}><a href={data.datoCmsHome.parallaxLink}>Click Here to Book An Appointment Today!</a></div>
+            </div>
           </Parallax>
 
           <div className="grid-container background-white">
